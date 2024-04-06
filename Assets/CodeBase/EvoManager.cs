@@ -10,6 +10,7 @@ public class EvoManager : MonoBehaviour
     [SerializeField] private Image evoBarFilling;
     private SpriteRenderer fishSpriteRenderer;
     private FishAnimator fishAnimator;
+    private FishBase fishBase;
     private int currentEvoLevel = 0;
     private int mutatedFishNumber = 0;
     private int healthyFishNumber = 0;
@@ -30,6 +31,10 @@ public class EvoManager : MonoBehaviour
     {
         fishAnimator = GetComponentInChildren<FishAnimator>();
         fishSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        fishBase = GetComponent<FishBase>();
+
+        fishBase.OnKilledFish += OnKilledFish;
+
         UpdateEvoBar();
     }
 
@@ -47,7 +52,10 @@ public class EvoManager : MonoBehaviour
         }
     }
 
-
+    public void OnKilledFish(FishType fishType)
+    {
+        IncreaseEvoBar(fishType);
+    }
 
 
 

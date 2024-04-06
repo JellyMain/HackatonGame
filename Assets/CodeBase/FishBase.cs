@@ -19,7 +19,12 @@ public class FishBase : MonoBehaviour
     private float cooldownTimer = 0;
     private bool isInCooldown;
     
-    
+    FishType fishType = FishType.Mutated;
+
+    public delegate void KilledFish(FishType fishType);
+    public KilledFish OnKilledFish;
+
+
     private void Awake()
     {
         fishAnimator = GetComponentInChildren<FishAnimator>();
@@ -39,8 +44,7 @@ public class FishBase : MonoBehaviour
         }
     }
 
-
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         CheckForAttack();
     }
@@ -56,8 +60,6 @@ public class FishBase : MonoBehaviour
 
         return true;
     }
-
-    
     
     private void CheckForAttack()
     {
@@ -66,6 +68,17 @@ public class FishBase : MonoBehaviour
         if (collider == null) return;
 
         FishBase targetFish = collider.GetComponent<FishBase>();
+
+        if(targetFish == this) return;        
+
+        AiFishController aiFish = targetFish.GetComponent<AiFishController>();
+        if(aiFish != null)
+        {
+            if (aiFish.IsSeeingCollider(collider))
+                return;
+        }
+
+        if (targetFish.size > size) return;
 
         if (!isInCooldown && targetFish != null)
         {
@@ -76,16 +89,17 @@ public class FishBase : MonoBehaviour
 
     private void Attack(FishBase targetFish)
     {
-        targetFish.health.ReduceHp(damage);
-        fishAnimator.PlayBite();
+        GameObject target = targetFish.health.ReduceHp(damage);
+        //fishAnimator.PlayBite();
         
         isInCooldown = true;
         cooldownTimer = attackCooldown;
+    
+        if(target != null && OnKilledFish != null)
+        {
+            OnKilledFish(target.GetComponent<FishBase>().fishType);
+        }
     }
-
-
-   
-
 
     private void OnDrawGizmosSelected()
     {
