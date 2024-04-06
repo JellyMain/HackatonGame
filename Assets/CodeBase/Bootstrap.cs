@@ -9,10 +9,7 @@ public class Bootstrap : MonoBehaviour
     private void Awake()
     {
         game = new Game();
+        DontDestroyOnLoad(this);
     }
-    
-    
-    
-    
     
 }
