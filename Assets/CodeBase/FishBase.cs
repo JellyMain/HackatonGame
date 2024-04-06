@@ -18,10 +18,11 @@ public class FishBase : MonoBehaviour
     private FishAnimator fishAnimator;
     private float cooldownTimer = 0;
     private bool isInCooldown;
-    
+
     FishType fishType = FishType.Mutated;
 
     public delegate void KilledFish(FishType fishType);
+
     public KilledFish OnKilledFish;
 
 
@@ -37,12 +38,14 @@ public class FishBase : MonoBehaviour
         if (isInCooldown)
         {
             cooldownTimer -= Time.deltaTime;
+
             if (cooldownTimer <= 0)
             {
                 isInCooldown = false;
             }
         }
     }
+
 
     protected virtual void FixedUpdate()
     {
@@ -60,7 +63,8 @@ public class FishBase : MonoBehaviour
 
         return true;
     }
-    
+
+
     private void CheckForAttack()
     {
         Collider2D collider = Physics2D.OverlapCircle(attackPoint.position, attackRadius);
@@ -69,14 +73,22 @@ public class FishBase : MonoBehaviour
 
         FishBase targetFish = collider.GetComponent<FishBase>();
 
-        if(targetFish == this) return;        
+        if (targetFish == this) return;
 
-        AiFishController aiFish = targetFish.GetComponent<AiFishController>();
-        if(aiFish != null)
+        try
         {
-            if (aiFish.IsSeeingCollider(collider))
-                return;
+            AiFishController aiFish = targetFish.GetComponent<AiFishController>();
+
+            if (aiFish != null)
+            {
+                if (aiFish.IsSeeingCollider(collider))
+                    return;
+            }
         }
+        catch (Exception e)
+        {
+        }
+
 
         if (targetFish.size > size) return;
 
@@ -91,20 +103,20 @@ public class FishBase : MonoBehaviour
     {
         GameObject target = targetFish.health.ReduceHp(damage);
         //fishAnimator.PlayBite();
-        
+
         isInCooldown = true;
         cooldownTimer = attackCooldown;
-    
-        if(target != null && OnKilledFish != null)
+
+        if (target != null && OnKilledFish != null)
         {
             OnKilledFish(target.GetComponent<FishBase>().fishType);
         }
     }
+
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
     }
-    
 }
