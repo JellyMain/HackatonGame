@@ -15,20 +15,28 @@ public class FishBase : MonoBehaviour
     public float damage = 10;
     public int size = 0;
     private Health health;
-    private float timer = 0;
+    private FishAnimator fishAnimator;
+    private float cooldownTimer = 0;
     private bool isInCooldown;
-
-
+    
+    
     private void Awake()
     {
+        fishAnimator = GetComponentInChildren<FishAnimator>();
         health = GetComponent<Health>();
     }
 
 
     private void Update()
     {
-        CountdownTimer();
-        Debug.Log(timer);
+        if (isInCooldown)
+        {
+            cooldownTimer -= Time.deltaTime;
+            if (cooldownTimer <= 0)
+            {
+                isInCooldown = false;
+            }
+        }
     }
 
 
@@ -49,22 +57,8 @@ public class FishBase : MonoBehaviour
         return true;
     }
 
-
-    private void CountdownTimer()
-    {
-        if (isInCooldown)
-        {
-            timer -= Time.deltaTime;
-        }
-        else
-        {
-            isInCooldown = false;
-            timer = 0;
-        }
-    }
-
-
-
+    
+    
     private void CheckForAttack()
     {
         Collider2D collider = Physics2D.OverlapCircle(attackPoint.position, attackRadius);
@@ -83,16 +77,14 @@ public class FishBase : MonoBehaviour
     private void Attack(FishBase targetFish)
     {
         targetFish.health.ReduceHp(damage);
-        Debug.Log(targetFish.health.hp);
-        ResetTimer();
-    }
-
-
-    private void ResetTimer()
-    {
+        fishAnimator.PlayBite();
+        
         isInCooldown = true;
-        timer = attackCooldown;
+        cooldownTimer = attackCooldown;
     }
+
+
+   
 
 
     private void OnDrawGizmosSelected()
@@ -100,4 +92,5 @@ public class FishBase : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
     }
+    
 }
