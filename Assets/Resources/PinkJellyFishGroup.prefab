@@ -1,0 +1,285 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5025011567387808094
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4690631958737149184}
+  m_Layer: 0
+  m_Name: PinkJellyFishGroup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4690631958737149184
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5025011567387808094}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.6415195, y: 1.4896841, z: -1.9581093}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 319651735490891943}
+  - {fileID: 7917165491899352079}
+  - {fileID: 6936997145250904438}
+  - {fileID: 3586749016733972582}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2578540802104189533
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4690631958737149184}
+    m_Modifications:
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.8024501
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.9976522
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.06848535
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -7.854
+      objectReference: {fileID: 0}
+    - target: {fileID: 7138478450354238727, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_Name
+      value: JellyFishPink (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+--- !u!4 &7917165491899352079 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+  m_PrefabInstance: {fileID: 2578540802104189533}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3337896324156956452
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4690631958737149184}
+    m_Modifications:
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.8024501
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.99653584
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.08316509
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -9.541
+      objectReference: {fileID: 0}
+    - target: {fileID: 7138478450354238727, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_Name
+      value: JellyFishPink (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+--- !u!4 &6936997145250904438 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+  m_PrefabInstance: {fileID: 3337896324156956452}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5366070483507001077
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4690631958737149184}
+    m_Modifications:
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.8024501
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99965125
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.026410444
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 3.027
+      objectReference: {fileID: 0}
+    - target: {fileID: 7138478450354238727, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_Name
+      value: JellyFishPink
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+--- !u!4 &319651735490891943 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+  m_PrefabInstance: {fileID: 5366070483507001077}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &9210156018490269236
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4690631958737149184}
+    m_Modifications:
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.8024501
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99896175
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.045557987
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 5.222
+      objectReference: {fileID: 0}
+    - target: {fileID: 7138478450354238727, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+      propertyPath: m_Name
+      value: JellyFishPink (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+--- !u!4 &3586749016733972582 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5627174220680210002, guid: c1f35b5d62d4a70448cd25c66417df80, type: 3}
+  m_PrefabInstance: {fileID: 9210156018490269236}
+  m_PrefabAsset: {fileID: 0}
