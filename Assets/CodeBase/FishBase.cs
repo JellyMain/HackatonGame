@@ -40,7 +40,7 @@ public class FishBase : MonoBehaviour
     }
 
 
-    protected void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         CheckForAttack();
     }
