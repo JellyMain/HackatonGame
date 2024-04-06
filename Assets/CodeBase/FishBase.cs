@@ -44,7 +44,6 @@ public class FishBase : MonoBehaviour
         }
     }
 
-
     protected virtual void FixedUpdate()
     {
         CheckForAttack();
@@ -70,17 +69,14 @@ public class FishBase : MonoBehaviour
 
         FishBase targetFish = collider.GetComponent<FishBase>();
 
-        if(targetFish == this) return;
+        if(targetFish == this) return;        
 
-        AiFishController fishController = collider.GetComponent<AiFishController>();
-        if(fishController != null)
+        AiFishController aiFish = targetFish.GetComponent<AiFishController>();
+        if(aiFish != null)
         {
-            if (fishController.IsEyeCollider(collider))
-            {
+            if (aiFish.IsSeeingCollider(collider))
                 return;
-            }
         }
-        
 
         if (targetFish.size > size) return;
 
@@ -94,7 +90,7 @@ public class FishBase : MonoBehaviour
     private void Attack(FishBase targetFish)
     {
         GameObject target = targetFish.health.ReduceHp(damage);
-        fishAnimator.PlayBite();
+        //fishAnimator.PlayBite();
         
         isInCooldown = true;
         cooldownTimer = attackCooldown;
