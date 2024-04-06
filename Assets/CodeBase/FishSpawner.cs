@@ -59,4 +59,10 @@ public class FishSpawner : MonoBehaviour
 
         return Random.Range(a, b);
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireCube(transform.position, mapSize * 2);
+    }
 }

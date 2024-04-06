@@ -7,7 +7,6 @@ using Pathfinding;
 [RequireComponent(typeof(Rigidbody2D))]
 public class AiFishController : FishBase
 {
-    [SerializeField] private float speed;
     [SerializeField] private Vector2 searchAreaSize;
 
     [SerializeField] private float seeingDistance;
@@ -22,6 +21,8 @@ public class AiFishController : FishBase
 
     Seeker seeker;
     Rigidbody2D rb;
+    AIPath aIPath;
+
     int currentWaypoint = 0;
 
     Vector3 lastPosition;
@@ -38,15 +39,19 @@ public class AiFishController : FishBase
 
     FishBase chaseTarget;
 
+    private const float threatRemoveTime = 15;
 
     private void Start()
     {
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
+        aIPath = GetComponent<AIPath>();
 
         sprite = GetComponentInChildren<SpriteRenderer>();
 
         polygonCollider = GetComponent<PolygonCollider2D>();
+
+        aIPath.maxSpeed = movementSpeed;
 
         seeingAngle /= 2;
 
@@ -72,7 +77,7 @@ public class AiFishController : FishBase
             {
                 Debug.Log(threats.Count);
                 threats.Dequeue();
-                threatTimer = 30;
+                threatTimer = threatRemoveTime;
             }
             else
             {
@@ -110,7 +115,7 @@ public class AiFishController : FishBase
         }
     
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
-        Vector2 force = direction * speed * Time.deltaTime;
+        Vector2 force = direction * movementSpeed * Time.deltaTime;
 
         rb.AddForce(force);
 
@@ -165,7 +170,7 @@ public class AiFishController : FishBase
             if (!threats.Contains(fish))
             {
                 threats.Enqueue(fish);
-                threatTimer = 30;
+                threatTimer = threatRemoveTime;
             }
 
             GetEscapePoint();
