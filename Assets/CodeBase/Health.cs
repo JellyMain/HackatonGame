@@ -9,6 +9,7 @@ public class Health: MonoBehaviour
     public void ReduceHp(float damage)
     {
         hp -= damage;
+        //Debug.Log("Ahh! I got DAmage!");
 
         if (hp <= 0)
         {
