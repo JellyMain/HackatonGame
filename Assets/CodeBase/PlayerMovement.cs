@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 10;
-    [SerializeField] private float rotationSpeed = 10;
-    
     private IGameInputService gameInputService;
+    private FishBase fishBase;
     private Rigidbody2D rb2d;
-    private float rotationAngle;
+    private float targetAngle;
+
 
     private void Awake()
     {
         gameInputService = AllServices.Container.Single<IGameInputService>();
+        fishBase = GetComponent<FishBase>();
         rb2d = GetComponent<Rigidbody2D>();
     }
 
@@ -23,27 +23,29 @@ public class PlayerMovement : MonoBehaviour
         Move();
     }
 
-    
+
     private void LateUpdate()
     {
         FlipSprite();
     }
 
-    
+
     private void Move()
     {
         Vector2 moveInput = gameInputService.GetNormalizedMovement();
-        
-        rb2d.velocity = transform.right * moveSpeed;
+
+        rb2d.velocity = transform.right * fishBase.movementSpeed;
 
         if (moveInput != Vector2.zero)
         {
-            rotationAngle += moveInput.y * rotationSpeed;
-            transform.rotation = Quaternion.AngleAxis(rotationAngle, Vector3.forward);
+            targetAngle = Mathf.Atan2(moveInput.y, moveInput.x) * Mathf.Rad2Deg;
         }
+
+        Quaternion targetRotation = Quaternion.AngleAxis(targetAngle, Vector3.forward);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, fishBase.rotationSpeed);
     }
-    
-    
+
+
 
     private void FlipSprite()
     {
