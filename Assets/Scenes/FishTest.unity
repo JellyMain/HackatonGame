@@ -183,10 +183,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1857543bb280f2442b720dcd99c7c394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxFish: 2000
+  maxFish: 50
   player: {fileID: 0}
   fishes:
-  - {fileID: 1121942785}
+  - {fileID: 1160118496}
+  - {fileID: 1309113562}
   mapSize: {x: 50, y: 35}
 --- !u!4 &980893285
 Transform:

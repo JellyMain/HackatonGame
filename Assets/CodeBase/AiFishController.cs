@@ -352,6 +352,12 @@ public class AiFishController : FishBase
             }
         }
     }
+
+    public bool IsEyeCollider(Collider2D collider)
+    {
+        return collider == polygonCollider;
+    }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         FishBase fish = collision.GetComponent<FishBase>();
