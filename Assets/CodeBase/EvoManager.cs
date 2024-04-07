@@ -23,8 +23,8 @@ public class EvoManager : MonoBehaviour
         [2] = 9,
         [3] = 11
     };
-    
-    
+
+
 
 
     private void Start()
@@ -52,6 +52,7 @@ public class EvoManager : MonoBehaviour
         }
     }
 
+
     public void OnKilledFish(FishType fishType)
     {
         IncreaseEvoBar(fishType);
@@ -63,12 +64,12 @@ public class EvoManager : MonoBehaviour
     {
         float fillAmount = (float)totalFishNumber / evoLevelsDictionary[currentEvoLevel];
         evoBarFilling.fillAmount = fillAmount;
-        
+
         Color barColor = Color.Lerp(Color.red, Color.green, (float)healthyFishNumber / totalFishNumber);
         evoBarFilling.color = barColor;
     }
 
-    
+
 
     private void IncreaseEvoBar(FishType fishType)
     {
@@ -76,13 +77,13 @@ public class EvoManager : MonoBehaviour
         {
             mutatedFishNumber++;
         }
-        else if(fishType == FishType.Healthy)
+        else if (fishType == FishType.Healthy)
         {
             healthyFishNumber++;
         }
 
         totalFishNumber = healthyFishNumber + mutatedFishNumber;
-        
+
 
         if (totalFishNumber == evoLevelsDictionary[currentEvoLevel])
         {
@@ -90,6 +91,7 @@ public class EvoManager : MonoBehaviour
             currentEvoLevel++;
             ResetFishNumber();
         }
+
 
         UpdateEvoBar();
     }
@@ -99,10 +101,26 @@ public class EvoManager : MonoBehaviour
     {
         if (mutatedFishNumber > healthyFishNumber)
         {
+            if (currentEvoLevel >= 3)
+            {
+                PlayerPrefs.SetInt("BadEnding", 1);
+                PlayerPrefs.Save();
+                AllServices.Container.Single<ISceneLoaderService>().LoadScene(3);
+            }
+            
+
             fishAnimator.EvolveMutated();
         }
         else
         {
+            if (currentEvoLevel >= 3)
+            {
+                PlayerPrefs.SetInt("GoodEnding",1);
+                PlayerPrefs.Save();
+                AllServices.Container.Single<ISceneLoaderService>().LoadScene(3);
+            }
+            
+
             fishAnimator.EvolveHealthy();
         }
     }
@@ -114,5 +132,4 @@ public class EvoManager : MonoBehaviour
         mutatedFishNumber = 0;
         healthyFishNumber = 0;
     }
-    
 }
