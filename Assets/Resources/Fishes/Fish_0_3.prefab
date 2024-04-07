@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -2135585597343286014, guid: 5aa8b770bc43046bc8d993d0d5b7f4a5, type: 3}
   m_Color: {r: 0.3509434, g: 0.31124607, b: 0.17149875, a: 1}
   m_FlipX: 0
@@ -165,9 +165,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 933262531637201972}
-  attackRadius: 0.14
+  attackRadius: 0.5
   attackCooldown: 5
-  movementSpeed: 3
+  movementSpeed: 1
   rotationSpeed: 1.5
   damage: 5
   size: 0
@@ -189,7 +189,7 @@ PolygonCollider2D:
     m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 183
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -236,7 +236,7 @@ CircleCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: 1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0518b2dfaa9647748a77b17375417408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 80
+  hp: 40
 --- !u!114 &9181969933730886286
 MonoBehaviour:
   m_ObjectHideFlags: 0

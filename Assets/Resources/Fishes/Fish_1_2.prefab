@@ -81,10 +81,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 933262531637201972}
-  attackRadius: 0.14
+  attackRadius: 0.5
   attackCooldown: 3
-  movementSpeed: 12
-  rotationSpeed: 1.5
+  movementSpeed: 6
+  rotationSpeed: 0.75
   damage: 5
   size: 1
   searchAreaSize: {x: 10, y: 10}
@@ -105,7 +105,7 @@ PolygonCollider2D:
     m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 183
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -152,7 +152,7 @@ CircleCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: 1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -340,7 +340,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
   m_Color: {r: 0.4264151, g: 0.14723387, b: 0.35848936, a: 1}
   m_FlipX: 0

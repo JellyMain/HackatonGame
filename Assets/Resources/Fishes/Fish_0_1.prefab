@@ -34,7 +34,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.268479, y: -3.0835984, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.84, y: 0.84, z: 0.84}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 933262531637201972}
@@ -81,9 +81,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 933262531637201972}
-  attackRadius: 0.14
+  attackRadius: 0.5
   attackCooldown: 5
-  movementSpeed: 9.01
+  movementSpeed: 2.25
   rotationSpeed: 1
   damage: 2
   size: 0
@@ -105,7 +105,7 @@ PolygonCollider2D:
     m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 183
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -152,7 +152,7 @@ CircleCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: 1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0518b2dfaa9647748a77b17375417408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 15
+  hp: 10
 --- !u!114 &9181969933730886286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,7 +340,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0.42787784, g: 0.6226415, b: 0.37945884, a: 1}
   m_FlipX: 0

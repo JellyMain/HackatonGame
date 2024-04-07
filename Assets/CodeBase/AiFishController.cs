@@ -57,8 +57,8 @@ public class AiFishController : FishBase
 
         Vector2[] points = {
             new Vector2(0, 0),
-            new Vector2( (Mathf.Tan(seeingAngle) * Mathf.Rad2Deg) * seeingDistance, seeingDistance),
-            new Vector2( -(Mathf.Tan(seeingAngle) * Mathf.Rad2Deg) * seeingDistance, seeingDistance),
+            new Vector2( (Mathf.Tan(seeingAngle) / Mathf.Rad2Deg) * seeingDistance, seeingDistance),
+            new Vector2( -(Mathf.Tan(seeingAngle) / Mathf.Rad2Deg) * seeingDistance, seeingDistance),
         };
 
         polygonCollider.SetPath(0, points);
@@ -75,7 +75,6 @@ public class AiFishController : FishBase
         {
             if (threatTimer <= 0)
             {
-                Debug.Log(threats.Count);
                 threats.Dequeue();
                 threatTimer = threatRemoveTime;
             }
@@ -268,5 +267,10 @@ public class AiFishController : FishBase
             Gizmos.color = Color.green;
         }
         Gizmos.DrawSphere(transform.position + Vector3.up * .5f, .5f);
+    }
+
+    private void OnDestroy()
+    {
+        Destroy(target.gameObject);
     }
 }

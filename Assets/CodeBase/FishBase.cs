@@ -17,9 +17,9 @@ public class FishBase : MonoBehaviour
     private Health health;
     private FishAnimator fishAnimator;
     private float cooldownTimer = 0;
-    private bool isInCooldown;
+    private bool isInCooldown = false;
 
-    FishType fishType = FishType.Mutated;
+    protected FishType fishType = FishType.Mutated;
 
     public delegate void KilledFish(FishType fishType);
 
@@ -71,28 +71,27 @@ public class FishBase : MonoBehaviour
 
         if (collider == null) return;
 
+
         FishBase targetFish = collider.GetComponent<FishBase>();
 
-        if (targetFish == this) return;
+        if (targetFish == this || targetFish == null) return;
 
-        try
-        {
+
             AiFishController aiFish = targetFish.GetComponent<AiFishController>();
 
-            if (aiFish != null)
+        if (aiFish != null)
+        {
+            if (aiFish.IsSeeingCollider(collider))
             {
-                if (aiFish.IsSeeingCollider(collider))
                     return;
             }
         }
-        catch (Exception e)
-        {
-        }
+        
 
 
         if (targetFish.size > size) return;
 
-        if (!isInCooldown && targetFish != null)
+        if (!isInCooldown)
         {
             Attack(targetFish);
         }
