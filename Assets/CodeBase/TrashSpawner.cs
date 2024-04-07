@@ -1,43 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Pathfinding;
 
-public class FishSpawner : MonoBehaviour
+public class TrashSpawner : MonoBehaviour
 {
-    [SerializeField] int maxFish;
-    [SerializeField] PlayerMovement player;
+    [SerializeField] int maxTrash;
 
-    [SerializeField] List<GameObject> fishes = new List<GameObject>();
+    [SerializeField] List<GameObject> trash = new List<GameObject>();
 
     [SerializeField] Vector2 mapSize = Vector2.zero;
 
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < maxFish; i++)
+        for (int i = 0; i < maxTrash; i++)
         {
             GameObject fish = Instantiate(
-                fishes[Random.Range(0, fishes.Count)], 
-                new Vector3( 
+                trash[Random.Range(0, trash.Count)],
+                new Vector3(
                     RandomRange(-mapSize.x, mapSize.x),
-                    RandomRange(-mapSize.y, mapSize.y), 0), 
+                    RandomRange(-mapSize.y, mapSize.y), 0),
                 Quaternion.identity);
             fish.transform.parent = transform;
             fish.gameObject.SetActive(true);
-        }    
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(transform.childCount < maxFish)
+        if (transform.childCount < maxTrash)
         {
             GameObject fish = Instantiate(
-                fishes[Random.Range(0, fishes.Count)], 
+                trash[Random.Range(0, trash.Count)],
                 new Vector3(
-                    RandomRange(-mapSize.x, mapSize.x), 
-                    RandomRange(-mapSize.y, mapSize.y), 0), 
+                    RandomRange(-mapSize.x, mapSize.x),
+                    RandomRange(-mapSize.y, mapSize.y), 0),
                 Quaternion.identity);
             fish.transform.parent = transform;
             fish.gameObject.SetActive(true);

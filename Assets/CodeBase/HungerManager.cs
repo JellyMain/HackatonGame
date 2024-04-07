@@ -11,10 +11,16 @@ public class HungerManager : MonoBehaviour
     [SerializeField] private float maxHunger = 50f;
     private float currentHunger;
 
+    FishBase fishBase;
+
 
     private void Start()
     {
         currentHunger = maxHunger;
+
+        fishBase = GetComponent<FishBase>();
+
+        fishBase.OnKilledFish += OnKilledFish;
     }
 
 
@@ -23,8 +29,12 @@ public class HungerManager : MonoBehaviour
         ReduceHungerBar();
     }
 
+    public void OnKilledFish(FishType fishType)
+    {
+        IncreaseHunger(10);
+    }
 
-    
+
     private void ReduceHungerBar()
     {
         if (currentHunger > 0)
@@ -32,5 +42,10 @@ public class HungerManager : MonoBehaviour
             currentHunger -= Time.deltaTime;
             hungerBarFilling.fillAmount = currentHunger/maxHunger;
         }
+    }
+
+    private void IncreaseHunger(float amount)
+    {
+        currentHunger += amount;
     }
 }
